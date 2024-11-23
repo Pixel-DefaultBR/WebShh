@@ -1,0 +1,52 @@
+﻿@model IEnumerable<WebShell.Models.CommandModel>
+
+<div class="text-center">
+    <div class="title-container">
+        <span>>_</span>
+        <h1>SshXweb</h1>
+    </div>
+    <div class="cmd-container">
+        <div class="output-container">
+            <h4 class="output"><span>OUTPUT</span>COMMAND</h4>
+            <textarea readonly>
+                @if(ViewBag.CommandResult == null)
+                {
+                    @Html.Raw("Please Await...");
+                } else
+                {
+                    @Html.Raw("localhost@localhost$\n");
+                    @Html.Raw(ViewBag.CommandResult);
+                }
+            </textarea> <!-- Tornar o textarea somente leitura -->
+        </div>
+        <div class="input-container">
+            <h4 class="input"><span>INPUT</span>COMMAND</h4>
+            <form asp-controller="Home" asp-action="ExecCommand" method="post">
+                <div class="usage-commands-container">
+                    <select id="cmds">
+                        @foreach (var command in Model)
+                        {
+                            <option class="cmd-opt" value="@command.Command">
+                                @command.Command
+                            </option>
+                        }
+                    </select>
+                </div>
+                <input class="form-control" id="cmd-input" name="command" placeholder="Digite seu comando aqui" required />
+                <button type="submit" class="btn btn-primary send">></button>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        const cmdInput = document.querySelector("#cmd-input");
+        const cmds = document.querySelector("#cmds");
+        const cmdOpt = document.querySelectorAll(".cmd-opt");
+
+        cmds.addEventListener("change", () => {
+            cmdInput.value = cmds.value;
+        })
+    </script>
+}

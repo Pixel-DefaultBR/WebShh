@@ -1,0 +1,159 @@
+:root {
+    --light: #E6F6F4;
+    --light-hover: #D9F2EF;
+    --light-active: #B0E4DD;
+    --normal: #00A991;
+    --normal-hover: #009883;
+    --normal-active: #008774;
+    --dark: #007F6D;
+    --dark-hover: #E6F6F4;
+    --dark-active: #004C41;
+    --darker: #003B33;
+}
+
+
+html {
+  font-family: Arial, 'Sans Serif Collection';
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.title-container {
+    text-align: center;
+    margin: 20px;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+
+.title-container > span {
+    margin-right: 10px;
+    font-weight: bolder;
+    font-size: 38px;
+    color: var(--darker);
+}
+
+.title-container > h1 {
+    font-weight: bold;
+    color: var(--normal);
+}
+
+.cmd-container {
+    /* AFTER REMOVE THIS */
+    border: 1px var(--dark) solid;
+    border-radius: 8px;
+    padding: 6px
+}
+
+.output-container {
+    display: flex;
+    flex-direction: column;
+    text-align: initial;
+}
+
+.output-container > .output {
+    border-bottom: solid 1px var(--normal);
+    margin: 10px 6px;
+}
+
+.output-container > .output > span {
+    color: var(--dark);
+    margin-right: 6px;
+    font-weight: bold;
+}
+
+.output-container > textarea {
+    height: 320px;
+    border: none;
+    resize: none;
+    background-color: var(--light);
+    border-radius: 8px;
+    padding: 20px;
+    font-style: italic;
+}
+
+
+.output-container > textarea:focus {
+    outline:none;
+}
+
+.input-container {
+    display: flex;
+    text-align: initial;
+    flex-direction: column;
+}
+
+.input-container > .input {
+    border-bottom: solid 1px var(--normal);
+    margin: 10px 6px;
+}
+
+.input-container > h4 > span {
+    color: var(--dark);
+    margin-right: 6px;
+    font-weight: bold;
+}
+
+.input-container > form {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.input-container > form > #cmd-input {
+    margin: 0px 10px;
+}
+
+.input-container > form > .usage-commands-container {
+    width: 80px;
+    height: 56px;
+}
+
+.input-container > form > .usage-commands-container > #cmds {
+    width: 80px;
+    height: 56px;
+    border-radius: 8px;
+    border: none;
+    font-weight: bold;
+    padding:0px 0px 0px 10px;
+    color: white;
+    background-color: var(--normal);
+}
+
+.input-container > form > #cmd-input {
+    height: 56px;
+}
+
+.input-container > form > .send {
+    height: 56px;
+    border: none;
+    width: 80px;
+    background-color: var(--normal);
+    font-weight: bold;
+}
+
+.input-container > form >  #cmd-input {
+
+}
+
+.input-container > form > #cmd-input:focus{
+     box-shadow: 0 0 0 2px var(--normal);
+}
